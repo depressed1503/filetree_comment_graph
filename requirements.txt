@@ -1,5 +1,2 @@
 wheel
 setuptools
-fastapi
-uvicorn
-python-mutlipart

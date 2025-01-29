@@ -2,6 +2,7 @@
 import os
 import re
 
+
 class RecursiveGrapher():
     DIR_COMMENT_FILE_NAME = "comment"
     DIR_INDENT_DEPTH = 4
@@ -30,6 +31,8 @@ class RecursiveGrapher():
     @staticmethod
     def generate_markdown(dir_path: str, ignore: list[str], indent=0):
         markdown_lines = []
+        if not os.path.isdir(dir_path):
+            return ""
         items = os.listdir(dir_path)
         for item in items:
             item_path = os.path.join(dir_path, item)

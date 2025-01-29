@@ -1,6 +1,7 @@
 # <comment>Файл с классом, содержащим статические методы для построение графа директории.</comment>
 import os
 import re
+import fnmatch
 
 
 class RecursiveGrapher():
@@ -36,8 +37,9 @@ class RecursiveGrapher():
         items = os.listdir(dir_path)
         for item in items:
             item_path = os.path.join(dir_path, item)
+            relative_path = os.path.relpath(item_path, dir_path)
             # check if file or directory is required to be ignored
-            if item_path in ignore or item in ignore:
+            if any(fnmatch.fnmatch(item_path, ignore_item) or fnmatch.fnmatch(item, ignore_item) or fnmatch.fnmatch(relative_path, ignore_item) for ignore_item in ignore):
                 continue
             # check if path is directory and extract comments recursively
             if os.path.isdir(item_path):

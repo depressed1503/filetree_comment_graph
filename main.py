@@ -5,7 +5,7 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("dir")
+    parser.add_argument("dir", help="Корневая директория проекта")
     args = parser.parse_args()
     print("\n".join(RecursiveGrapher.generate_markdown(args.dir, ignore=["__pycache__", ".git"])))
 

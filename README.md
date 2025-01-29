@@ -39,10 +39,19 @@ python3 -m filetree_comment_graph -h
 
 <project_root>
 ```
-|💾recursive_grapher.py # Файл с классом, содержащим статические методы для построение графа директории.
-|💾arg_actions.py # 
+|💾requirements.txt # 
+|📁filetree_comment_graph
+|----💾recursive_grapher.py # Файл с классом, содержащим статические методы для построение графа директории.
+|----💾arg_actions.py # 
+|----💾__init__.py # 
+|----💾__main__.py # Главный файл, содержащий скрипт запуска программы.
 |💾README.md # комментарий
+|💾setup.py # 
 |💾.gitignore # 
-|💾main.py # Главный файл, содержащий скрипт запуска программы.
 ```
 </project_root>
+
+Полная команда для этого репозитория
+```
+python3 -m filetree_comment_graph . -n build dist __pycache__ filetree_comment_graph.egg-info venv .git
+```

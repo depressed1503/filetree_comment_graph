@@ -3,3 +3,6 @@ venv
 env
 .venv
 .env
+dist
+build
+filetree_comment_graph.egg-info

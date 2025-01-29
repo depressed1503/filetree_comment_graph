@@ -1,7 +1,7 @@
 # <comment>Главный файл, содержащий скрипт запуска программы.</comment>
-from recursive_grapher import RecursiveGrapher
+from .recursive_grapher import RecursiveGrapher
 import re, os, argparse
-from arg_actions import *
+from .arg_actions import *
 
 
 def replace_project_tree(dir: str, markdown: str, readme_file_name: str="README.md"):

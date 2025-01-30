@@ -12,7 +12,7 @@ python3 main.py path/to/directory -i 4 -n __pycache__ .git
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-python3 setup.py bdist_wheel
+python3 -m build
 pip install dist/filetree_comment_graph-0.1-py3-none-any.whl --force-reinstall
 ```
 

@@ -1,3 +1,4 @@
+# <comment>Файл для игнорирование git</comment>
 __pycache__
 venv
 env

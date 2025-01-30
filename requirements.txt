@@ -1,2 +1,3 @@
+# <comment>Файл зависимостей pip</comment>
 wheel
 setuptools

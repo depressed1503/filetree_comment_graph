@@ -1,3 +1,4 @@
+# <comment>Файл с валидационными классами для параметров командной строки</comment>
 from argparse import Action
 import os
 

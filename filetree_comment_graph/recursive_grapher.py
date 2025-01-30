@@ -17,7 +17,7 @@ class RecursiveGrapher():
                 f_text = f.read()
                 comment_match = re.search(r"<comment>(.*?)</comment>", f_text)
                 if comment_match:
-                    return comment_match.group(1)
+                    return " # " + comment_match.group(1)
         except UnicodeDecodeError:
             return ""
         return ""
@@ -43,9 +43,9 @@ class RecursiveGrapher():
                 continue
             # check if path is directory and extract comments recursively
             if os.path.isdir(item_path):
-                markdown_lines.append(f"|{"-" * self.DIR_INDENT_DEPTH * indent}📁{item}{self.get_dir_comment(item_path)}")
+                markdown_lines.append(f"|{'-' * self.DIR_INDENT_DEPTH * indent}📁{item}{self.get_dir_comment(item_path)}")
                 markdown_lines.extend(self.generate_markdown(item_path, ignore, indent+1))
             else:
                 if item != self.DIR_COMMENT_FILE_NAME:
-                    markdown_lines.append(f"|{"-" * self.DIR_INDENT_DEPTH * indent}💾{item} # {self.get_file_comment(item_path)}")
+                    markdown_lines.append(f"|{'-' * self.DIR_INDENT_DEPTH * indent}💾{item}{self.get_file_comment(item_path)}")
         return markdown_lines

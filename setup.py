@@ -1,7 +1,7 @@
 # <comment>Сетап файл для выпуска .whl пакета</comment>
 from setuptools import setup, find_packages
 
-print(find_packages)
+
 setup(
     name="filetree_comment_graph",
     version="0.1",
